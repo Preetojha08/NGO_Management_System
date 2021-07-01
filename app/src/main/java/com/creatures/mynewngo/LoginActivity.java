@@ -24,14 +24,18 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +43,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
 
     TextView tv_sign_up;
+    TextView or_logout;
     TextInputEditText tiet_log_user_name,tiet_log_user_password;
     TextInputLayout til_log_password;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -47,11 +52,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     String log_username,log_userpassword;
     int user_input=0;
     String pre_password="Test@1234";
+    String google="google";
 
     //Google Sign UP
     ImageView image_view_google_login,image_view_facebook_login;
     SignInButton google_signInButton;
     GoogleApiClient googleApiClient;
+    private GoogleSignInOptions gso;
     private static final int RC_SIGN_IN = 1;
     int counter=0;
 
@@ -74,6 +81,33 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         google_signInButton=(SignInButton)findViewById(R.id.google_sign_up_button);
 
+        or_logout=(TextView)findViewById(R.id.text_view_or_logout);
+
+        or_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(
+                        new ResultCallback<Status>() {
+                            @Override
+                            public void onResult(Status status) {
+                                if (status.isSuccess()){
+                                    //Toast.makeText(getApplicationContext(),"Logout", Toast.LENGTH_LONG).show();
+                                    Log.d("Logout Info","Logout done");
+                                }else{
+                                    //Toast.makeText(getApplicationContext(),"Session not close", Toast.LENGTH_LONG).show();
+                                    Log.d("Logout Info","Logout Not done");
+                                }
+                            }
+                        });
+            }
+        });
+
+        image_view_facebook_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, "Hello World", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         login_btn=(Button)findViewById(R.id.button_login);
 
@@ -124,11 +158,17 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
         });
 
+        GoogleSignInOptions gso=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+
+        googleApiClient=new GoogleApiClient.Builder(this).enableAutoManage(this,this).addApi(Auth.GOOGLE_SIGN_IN_API,gso)
+                .build();
+
         image_view_google_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                google_signInButton.performClick();
-                user_input=40;
+                user_input= 40;
+                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                startActivityForResult(intent,RC_SIGN_IN);
             }
         });
 
@@ -196,6 +236,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             case 10:
                 log_parameters.put("username",username);
                 log_parameters.put("password",password);
+
                 break;
             case 20:
                 log_parameters.put("email",username);
@@ -205,6 +246,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 log_parameters.put("mobile_no",username);
                 log_parameters.put("password",password);
                 break;
+            //Google Login
+            case 40:
+                server_api_url="https://preetojhadatabasetrail.000webhostapp.com/NGO/gf_signup.php";
+                log_parameters.put("gf_username",username);
+                log_parameters.put("gf_email",password);
+                log_parameters.put("gf_account_org",google);
+
 
         }
 
@@ -220,6 +268,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                     } else {
                         Log.e("Error Login One", " Error: pata nai kyu nai horaha hAI");
+                        or_logout.performClick();
                         Toast.makeText(LoginActivity.this, log_json_object.getString("message"), Toast.LENGTH_LONG).show();
                     }
                 } catch (Exception e) {
@@ -275,7 +324,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
             g_username=account.getDisplayName();
             g_email=account.getEmail();
-            account_org="google";
+            Toast.makeText(this, " "+g_username+" "+g_email, Toast.LENGTH_SHORT).show();
+            SendLoginDataToServer(g_username,g_email);
 
 
         }else{

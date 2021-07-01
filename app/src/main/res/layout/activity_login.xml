@@ -119,20 +119,31 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="OR"
+                   android:id="@+id/text_view_or_logout"
                    android:layout_gravity="center"
                    android:layout_marginTop="@dimen/_50sdp"/>
 
                <LinearLayout
                    android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:orientation="vertical">
+                   android:layout_height="25dp"
+                   android:weightSum="2"
+                   android:layout_marginBottom="20dp"
+                   android:orientation="horizontal">
 
-                   <LinearLayout
+                   <FrameLayout
                        android:layout_width="match_parent"
-                       android:layout_height="25dp"
-                       android:weightSum="2"
-                       android:layout_marginBottom="20dp"
-                       android:orientation="horizontal">
+                       android:layout_weight="1"
+                       android:layout_height="match_parent">
+
+                       <com.google.android.gms.common.SignInButton
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_centerVertical="true"
+                           android:layout_gravity="center"
+                           android:padding="10dp"
+                           android:visibility="invisible"
+                           android:id="@+id/google_sign_up_button"
+                           android:layout_centerHorizontal="true"/>
 
                        <ImageView
                            android:id="@+id/imgview_google_login"
@@ -141,6 +152,13 @@
                            android:layout_weight="1"
                            app:srcCompat="@drawable/google" />
 
+                   </FrameLayout>
+
+                   <FrameLayout
+                       android:layout_width="match_parent"
+                       android:layout_weight="1"
+                       android:layout_height="match_parent">
+
                        <ImageView
                            android:id="@+id/imgview_facebook_login"
                            android:layout_width="wrap_content"
@@ -148,26 +166,8 @@
                            android:layout_weight="1"
                            app:srcCompat="@drawable/facebook" />
 
-                   </LinearLayout>
+                   </FrameLayout>
 
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="25dp"
-                       android:weightSum="2"
-                       android:visibility="gone"
-                       android:layout_marginBottom="20dp"
-                       android:orientation="horizontal">
-
-                       <com.google.android.gms.common.SignInButton
-                           android:layout_width="wrap_content"
-                           android:layout_height="@dimen/_10sdp"
-                           android:layout_centerVertical="true"
-                           android:layout_gravity="center"
-                           android:padding="10dp"
-                           android:id="@+id/google_sign_up_button"
-                           android:layout_centerHorizontal="true"/>
-
-                   </LinearLayout>
                </LinearLayout>
 
                <LinearLayout
