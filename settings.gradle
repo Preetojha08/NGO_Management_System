@@ -1,0 +1,2 @@
+rootProject.name = "My New NGO"
+include ':app'
