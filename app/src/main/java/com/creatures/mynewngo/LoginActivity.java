@@ -54,6 +54,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     String pre_password="Test@1234";
     String google="google";
 
+    TextView sign_in;
+
     //Google Sign UP
     ImageView image_view_google_login,image_view_facebook_login;
     SignInButton google_signInButton;
@@ -82,6 +84,15 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         google_signInButton=(SignInButton)findViewById(R.id.google_sign_up_button);
 
         or_logout=(TextView)findViewById(R.id.text_view_or_logout);
+
+        sign_in=(TextView)findViewById(R.id.sign_in);
+
+        sign_in.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+            }
+        });
 
         or_logout.setOnClickListener(new View.OnClickListener() {
             @Override

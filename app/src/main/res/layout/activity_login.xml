@@ -33,6 +33,7 @@
                    android:fontFamily="@font/abril_fatface"
                    android:gravity="center"
                    android:text="SIGN IN"
+                   android:id="@+id/sign_in"
                    android:textColor="#000"
                    android:textSize="@dimen/_32sdp" />
 
