@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:background="#FF5722"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_8sdp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:fontFamily="@font/abril_fatface"
+        android:text="Android Application Demo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textColor="#000"
+        android:textStyle="italic"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/abril_fatface"
+        android:layout_height="wrap_content"
+        android:text="1. Android Application For NGO management System" />
+
+</LinearLayout>
