@@ -34,26 +34,33 @@ public class HelpActivity extends AppCompatActivity {
 
         recyclerView=(RecyclerView)findViewById(R.id.help_cards_recycler_view);
 
-        titles.add("First Item");
-        titles.add("Second Item");
-        titles.add("Third Item");
-        titles.add("Fourth Item");
-        titles.add("Fifth Item");
-        titles.add("Sixth Item");
+        titles.add("Cancer Treatment");//1
+        titles.add("Liver Treatment");//2
+        titles.add("Accident & Injury");//3
+        titles.add("Heart Issue");//4
+        titles.add("Kidney Treatment");//5
+        titles.add("Brain Surgery");//6
+        titles.add("COVID Treatment");//7
+        titles.add("Request for Different Kind of Issue");//8
 
-        sub_titles.add("Item 1");
-        sub_titles.add("Item 2");
-        sub_titles.add("Item 3");
-        sub_titles.add("Item 4");
-        sub_titles.add("Item 5");
-        sub_titles.add("Item 6");
+        sub_titles.add("Maximum Fund Raised \n ₹54 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n ₹22 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n ₹29 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n ₹30 Lakhs");
 
-        images.add(R.drawable.info);
-        images.add(R.drawable.info);
-        images.add(R.drawable.info);
-        images.add(R.drawable.info);
-        images.add(R.drawable.info);
-        images.add(R.drawable.info);
+        sub_titles.add("Maximum Fund Raised \n ₹20 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n ₹50 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n ₹28 Lakhs");
+        sub_titles.add("Any Type of Help");
+
+        images.add(R.drawable.cancer);//1
+        images.add(R.drawable.liver);//2
+        images.add(R.drawable.knee);//
+        images.add(R.drawable.heart);//4
+        images.add(R.drawable.kidney);//5
+        images.add(R.drawable.brain);//6
+        images.add(R.drawable.covid);//7
+        images.add(R.drawable.help_card);//8
 
         adapter = new HelperCardRecyclerAdapter(this,titles,sub_titles,images);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2,GridLayoutManager.VERTICAL,false);
