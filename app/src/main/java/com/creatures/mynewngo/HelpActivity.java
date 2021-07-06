@@ -6,7 +6,14 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
+
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +24,7 @@ public class HelpActivity extends AppCompatActivity {
     List<String> titles;
     List<String> sub_titles;
     List<Integer> images;
-
+    BarChart bar_chart;
     HelperCardRecyclerAdapter adapter;
 
     @Override
@@ -41,7 +48,7 @@ public class HelpActivity extends AppCompatActivity {
         titles.add("Kidney Treatment");//5
         titles.add("Brain Surgery");//6
         titles.add("COVID Treatment");//7
-        titles.add("Request for Different Kind of Issue");//8
+        titles.add("Different Kind of Help");//8Request for Different Kind of Issue
 
         sub_titles.add("Maximum Fund Raised \n ₹54 Lakhs");
         sub_titles.add("Maximum Fund Raised \n ₹22 Lakhs");
@@ -51,7 +58,7 @@ public class HelpActivity extends AppCompatActivity {
         sub_titles.add("Maximum Fund Raised \n ₹20 Lakhs");
         sub_titles.add("Maximum Fund Raised \n ₹50 Lakhs");
         sub_titles.add("Maximum Fund Raised \n ₹28 Lakhs");
-        sub_titles.add("Any Type of Help");
+        sub_titles.add("Request for Any Type of Issue");//Request for Different Kind of Issue
 
         images.add(R.drawable.cancer);//1
         images.add(R.drawable.liver);//2
@@ -69,6 +76,31 @@ public class HelpActivity extends AppCompatActivity {
         //recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(adapter);
 
+
+        //Bar Graph Chart
+        bar_chart=(BarChart)findViewById(R.id.help_bar_chart);
+
+        ArrayList<BarEntry> bar_entry_array_list = new ArrayList<>();
+
+        bar_entry_array_list.add(new BarEntry(2016,430));
+        bar_entry_array_list.add(new BarEntry(2017,440));
+        bar_entry_array_list.add(new BarEntry(2018,400));
+        bar_entry_array_list.add(new BarEntry(2019,300));
+        bar_entry_array_list.add(new BarEntry(2020,430));
+        bar_entry_array_list.add(new BarEntry(2021,486));
+
+        BarDataSet bar_data_set = new BarDataSet(bar_entry_array_list,"Requests");
+        bar_data_set.setColors(ColorTemplate.MATERIAL_COLORS);
+        bar_data_set.setValueTextColor(Color.BLACK);
+        bar_data_set.setValueTextSize(11f);
+
+        BarData bar_data = new BarData(bar_data_set);
+
+        bar_chart.setFitBars(true);
+        bar_chart.setData(bar_data);
+        boolean bol=true;
+        bar_chart.getDescription().setText("User Help Requests Chart");
+        bar_chart.animateY(2000);
 
     }
 }

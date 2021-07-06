@@ -15,7 +15,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/_5sdp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -32,25 +31,20 @@
                 android:orientation="vertical"
                 android:padding="@dimen/_2sdp">
 
-                <androidx.cardview.widget.CardView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginRight="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_5sdp"
-                    android:padding="@dimen/_10sdp"
-                    app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardElevation="@dimen/_6sdp">
+                    android:layout_height="@dimen/_200sdp"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:orientation="vertical" >
 
-                    <LinearLayout
+                    <com.github.mikephil.charting.charts.BarChart
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_150sdp"
-                        android:background="@drawable/graph_2"
-                        android:gravity="center"
-                        android:orientation="vertical" />
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:id="@+id/help_bar_chart"/>
 
-                </androidx.cardview.widget.CardView>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -58,8 +52,8 @@
                 android:layout_width="match_parent"
                 android:padding="@dimen/_5sdp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
                 android:id="@+id/help_cards_recycler_view"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_5sdp"/>
