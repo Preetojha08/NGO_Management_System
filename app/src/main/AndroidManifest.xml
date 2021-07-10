@@ -14,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyNewNGO">
-        <activity android:name=".HelpRequestFormActivity"  android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".JobPortalActivity"></activity>
+        <activity
+            android:name=".HelpRequestFormActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HelpActivity"
             android:theme="@style/AppTheme.NoActionBar" />
