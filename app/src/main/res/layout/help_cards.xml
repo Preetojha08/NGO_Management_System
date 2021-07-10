@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/_10sdp"
+    android:id="@+id/help_card_details"
     android:layout_marginHorizontal="@dimen/_6sdp"
     android:layout_marginVertical="@dimen/_6sdp"
     app:cardCornerRadius="@dimen/_10sdp"
