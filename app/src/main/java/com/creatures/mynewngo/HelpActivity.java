@@ -70,7 +70,7 @@ public class HelpActivity extends AppCompatActivity {
         images.add(R.drawable.help_card);//8
 
         adapter = new HelperCardRecyclerAdapter(this,titles,sub_titles,images);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2,GridLayoutManager.VERTICAL,false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(HelpActivity.this,2,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(gridLayoutManager);
 
         //recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

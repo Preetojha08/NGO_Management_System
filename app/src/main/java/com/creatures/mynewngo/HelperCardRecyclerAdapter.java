@@ -28,6 +28,7 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
         this.titles = titles;
         this.sub_titles = sub_titles;
         this.images = images;
+        this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
     }
 
@@ -44,11 +45,45 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
         holder.tv_help_card_heading.setText(titles.get(position));
         holder.tv_help_card_subheading.setText(sub_titles.get(position));
         holder.tv_help_card_image_view.setImageResource(images.get(position));
+        int a = position;
+        a++;
+        int finalA = a;
         holder.card_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context,HelpRequestFormActivity.class);
+
+
+                switch (finalA)
+                {
+                    case 1:
+                        i.putExtra("Help_type","Cancer Treatment");
+                        break;
+                    case 2:
+                        i.putExtra("Help_type","Liver Treatment");
+                        break;
+                    case 3:
+                        i.putExtra("Help_type","Accident & Injury Treatment");
+                        break;
+                    case 4:
+                        i.putExtra("Help_type","Heart Issue or Treatment");
+                        break;
+                    case 5:
+                        i.putExtra("Help_type","Kidney Treatment");
+                        break;
+                    case 6:
+                        i.putExtra("Help_type","Brain Treatment");
+                        break;
+                    case 7:
+                        i.putExtra("Help_type","COVID Treatment");
+                        break;
+                    case 8:
+                        i.putExtra("Help_type","Request for different kind of Help");
+                        break;
+                }
                 context.startActivity(i);
+
+
             }
         });
 
