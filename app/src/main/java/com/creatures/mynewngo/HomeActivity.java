@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -41,6 +42,19 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
+    switch (id)
+    {
+        case (R.id.nav_help):
+            startActivity(new Intent(HomeActivity.this,HelpActivity.class));
+            break;
+        case (R.id.nav_job):
+            startActivity(new Intent(HomeActivity.this,JobPortalActivity.class));
+            break;
+        default:
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+            break;
+
+    }
 
         return true;
     }
