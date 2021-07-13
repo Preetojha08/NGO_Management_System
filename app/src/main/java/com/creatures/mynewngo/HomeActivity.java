@@ -50,6 +50,9 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
         case (R.id.nav_job):
             startActivity(new Intent(HomeActivity.this,JobPortalActivity.class));
             break;
+        case (R.id.nav_motivational):
+            startActivity(new Intent(HomeActivity.this,MotivationalQuotesActivity.class));
+            break;
         default:
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
             break;

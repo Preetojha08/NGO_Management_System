@@ -28,7 +28,15 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
     Context context;
     int card_details;
 
-    public HelperCardRecyclerAdapter(Context context, List<String> titles, List<String> sub_titles, List<Integer> images,int card_details) {
+
+    public HelperCardRecyclerAdapter(Context context, List<Integer> images, int card_details) {
+        this.images = images;
+        this.context = context;
+        this.layoutInflater = LayoutInflater.from(context);
+        this.card_details = card_details;
+    }
+
+    public HelperCardRecyclerAdapter(Context context, List<String> titles, List<String> sub_titles, List<Integer> images, int card_details) {
         this.titles = titles;
         this.sub_titles = sub_titles;
         this.images = images;
@@ -51,6 +59,10 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
        {
            view_oncreate = layoutInflater.inflate(R.layout.job_details_card,parent,false);
 
+       }
+       else if (card_details == 20)
+       {
+           view_oncreate = layoutInflater.inflate(R.layout.motivational_quotes_card,parent,false);
        }
        else
        {
@@ -108,6 +120,13 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
             });
         }
 
+        if (card_details == 20)
+        {
+            holder.motivational_quotes_imagv.setImageResource(images.get(position));
+            holder.tv_title_one_mq.setText(titles.get(position));
+            holder.tv_sub_title_two_mq.setText(sub_titles.get(position));
+        }
+
         if (card_details == 99)
         {
             /*holder.tv_help_card_heading.setText(titles.get(position));
@@ -146,6 +165,9 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
         CircleImageView job_circleImageView;
         CardView job_details_card_view;
 
+        ImageView motivational_quotes_imagv;
+        TextView tv_title_one_mq,tv_sub_title_two_mq;
+
         public card_view_holder(@NonNull View itemView) {
             super(itemView);
 
@@ -163,6 +185,13 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
                 tv_job_description=(TextView)itemView.findViewById(R.id.text_view_job_description);
                 job_circleImageView=(CircleImageView)itemView.findViewById(R.id.job_portal_Job_image_view);
                 job_details_card_view=(CardView)itemView.findViewById(R.id.job_details_card_view);
+            }
+
+            if (card_details == 20)
+            {
+                motivational_quotes_imagv=(ImageView)itemView.findViewById(R.id.motivational_quotes_image_view);
+                tv_title_one_mq=(TextView)itemView.findViewById(R.id.text_view_title_mq);
+                tv_sub_title_two_mq=(TextView)itemView.findViewById(R.id.text_view_sub_title_mq);
             }
 
 
