@@ -31,9 +31,9 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
 
     public HelperCardRecyclerAdapter(Context context, List<Integer> images, int card_details) {
         this.images = images;
+        this.card_details = card_details;
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
-        this.card_details = card_details;
     }
 
     public HelperCardRecyclerAdapter(Context context, List<String> titles, List<String> sub_titles, List<Integer> images, int card_details) {
@@ -123,8 +123,6 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
         if (card_details == 20)
         {
             holder.motivational_quotes_imagv.setImageResource(images.get(position));
-            holder.tv_title_one_mq.setText(titles.get(position));
-            holder.tv_sub_title_two_mq.setText(sub_titles.get(position));
         }
 
         if (card_details == 99)
@@ -152,7 +150,7 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
 
     @Override
     public int getItemCount() {
-        return titles.size();
+        return images.size();
     }
 
     public class card_view_holder extends RecyclerView.ViewHolder
@@ -190,8 +188,7 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
             if (card_details == 20)
             {
                 motivational_quotes_imagv=(ImageView)itemView.findViewById(R.id.motivational_quotes_image_view);
-                tv_title_one_mq=(TextView)itemView.findViewById(R.id.text_view_title_mq);
-                tv_sub_title_two_mq=(TextView)itemView.findViewById(R.id.text_view_sub_title_mq);
+
             }
 
 

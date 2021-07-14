@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyNewNGO">
-        <activity android:name=".MotivationalQuotesActivity"></activity>
+        <activity android:name=".MotivationalQuotesActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".JobPortalActivity"
             android:theme="@style/AppTheme.NoActionBar" />

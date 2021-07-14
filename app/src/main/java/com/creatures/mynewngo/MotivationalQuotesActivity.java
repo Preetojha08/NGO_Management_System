@@ -1,6 +1,7 @@
 package com.creatures.mynewngo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,24 +23,26 @@ public class MotivationalQuotesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motivational_quotes2);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_motivational_quotes);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Stay Motivated");
+
         recyclerView=(RecyclerView)findViewById(R.id.recycler_view_motivational_quotes);
 
         motivational_quotes_images = new ArrayList<>();
         titles = new ArrayList<>();
         sub_titles = new ArrayList<>();
 
-        motivational_quotes_images.add(R.drawable.motive_1);//1
-        motivational_quotes_images.add(R.drawable.motive_2);//1
-        motivational_quotes_images.add(R.drawable.motive_3);//1
-        motivational_quotes_images.add(R.drawable.motive_1);//1
-        motivational_quotes_images.add(R.drawable.motive_2);//1
-        motivational_quotes_images.add(R.drawable.motive_3);//1
-        motivational_quotes_images.add(R.drawable.motive_1);//1
-        motivational_quotes_images.add(R.drawable.motive_2);//1
-        motivational_quotes_images.add(R.drawable.motive_3);//1
-        motivational_quotes_images.add(R.drawable.motive_1);//1
-        motivational_quotes_images.add(R.drawable.motive_2);//1
-        motivational_quotes_images.add(R.drawable.motive_3);//1
+        motivational_quotes_images.add(R.drawable.photographer);
+        motivational_quotes_images.add(R.drawable.real_estate);
+        motivational_quotes_images.add(R.drawable.teacher);
+        motivational_quotes_images.add(R.drawable.waitress);
+        motivational_quotes_images.add(R.drawable.policeman);
+        motivational_quotes_images.add(R.drawable.programmer);
+        motivational_quotes_images.add(R.drawable.worker);
+        motivational_quotes_images.add(R.drawable.designer);
+        motivational_quotes_images.add(R.drawable.office);
+        motivational_quotes_images.add(R.drawable.doctor);
 
 
         titles.add("title 1");//1
@@ -68,7 +71,7 @@ public class MotivationalQuotesActivity extends AppCompatActivity {
         sub_titles.add("Sub Title 5");//5
         sub_titles.add("Sub Title 6");//6
 
-        motivational_adapter = new HelperCardRecyclerAdapter(this,titles,sub_titles,motivational_quotes_images,20);
+        motivational_adapter = new HelperCardRecyclerAdapter(this,motivational_quotes_images,20);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(MotivationalQuotesActivity.this,2,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(gridLayoutManager);
 
