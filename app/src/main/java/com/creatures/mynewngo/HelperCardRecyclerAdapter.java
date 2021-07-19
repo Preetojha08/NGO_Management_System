@@ -60,6 +60,10 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
            view_oncreate = layoutInflater.inflate(R.layout.job_details_card,parent,false);
 
        }
+       else if (card_details == 10)
+       {
+           view_oncreate = layoutInflater.inflate(R.layout.event_cards,parent,false);
+       }
        else if (card_details == 20)
        {
            view_oncreate = layoutInflater.inflate(R.layout.motivational_quotes_card,parent,false);
@@ -125,6 +129,23 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
             holder.motivational_quotes_imagv.setImageResource(images.get(position));
         }
 
+        if (card_details == 10)
+        {
+            holder.event_tv_1.setText(titles.get(position));
+            holder.event_tv_2.setText(sub_titles.get(position));
+            holder.event_iv.setImageResource(images.get(position));
+            int a = position;
+            a++;
+            int finalA = a;
+            holder.event_cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "Event no: "+finalA, Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+
         if (card_details == 99)
         {
             /*holder.tv_help_card_heading.setText(titles.get(position));
@@ -166,6 +187,10 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
         ImageView motivational_quotes_imagv;
         TextView tv_title_one_mq,tv_sub_title_two_mq;
 
+        TextView event_tv_1,event_tv_2;
+        ImageView event_iv,imageView_notification;
+        CardView event_cardView;
+
         public card_view_holder(@NonNull View itemView) {
             super(itemView);
 
@@ -188,6 +213,17 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
             if (card_details == 20)
             {
                 motivational_quotes_imagv=(ImageView)itemView.findViewById(R.id.motivational_quotes_image_view);
+
+            }
+
+            if (card_details == 10)
+            {
+                event_tv_1=(TextView)itemView.findViewById(R.id.recycler_view_event_name_display);
+                event_tv_2=(TextView)itemView.findViewById(R.id.recycler_view_event_description_display);
+
+                imageView_notification=(ImageView)itemView.findViewById(R.id.event_notification_image_view);
+                event_iv=(ImageView)itemView.findViewById(R.id.image_view_event_image);
+                event_cardView=(CardView)itemView.findViewById(R.id.event_details_card_view);
 
             }
 
