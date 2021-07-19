@@ -47,6 +47,9 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
         case (R.id.nav_help):
             startActivity(new Intent(HomeActivity.this,HelpActivity.class));
             break;
+        case (R.id.nav_event):
+            startActivity(new Intent(HomeActivity.this,EventActivity.class));
+            break;
         case (R.id.nav_job):
             startActivity(new Intent(HomeActivity.this,JobPortalActivity.class));
             break;
