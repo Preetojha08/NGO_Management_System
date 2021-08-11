@@ -5,7 +5,7 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item android:title="NGO">
+        <item android:title="NGO Management System">
 
             <menu>
 
