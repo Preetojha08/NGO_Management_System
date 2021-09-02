@@ -33,6 +33,7 @@ public class MotivationalQuotesActivity extends AppCompatActivity {
         titles = new ArrayList<>();
         sub_titles = new ArrayList<>();
 
+        /*
         motivational_quotes_images.add(R.drawable.photographer);
         motivational_quotes_images.add(R.drawable.real_estate);
         motivational_quotes_images.add(R.drawable.teacher);
@@ -43,6 +44,17 @@ public class MotivationalQuotesActivity extends AppCompatActivity {
         motivational_quotes_images.add(R.drawable.designer);
         motivational_quotes_images.add(R.drawable.office);
         motivational_quotes_images.add(R.drawable.doctor);
+        */
+
+        motivational_quotes_images.add(R.drawable.motive_1);
+        motivational_quotes_images.add(R.drawable.motive_2);
+        motivational_quotes_images.add(R.drawable.motive_3);
+        motivational_quotes_images.add(R.drawable.motive_4);
+        motivational_quotes_images.add(R.drawable.motive_1);
+        motivational_quotes_images.add(R.drawable.motive_2);
+        motivational_quotes_images.add(R.drawable.motive_3);
+        motivational_quotes_images.add(R.drawable.motive_4);
+
 
 
         titles.add("title 1");//1

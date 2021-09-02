@@ -17,6 +17,8 @@ public class JobPortalActivity extends AppCompatActivity {
     List<String> job_description;
     List<Integer> job_images;
 
+
+
     RecyclerView recyclerView;
 
     HelperCardRecyclerAdapter adapter;
