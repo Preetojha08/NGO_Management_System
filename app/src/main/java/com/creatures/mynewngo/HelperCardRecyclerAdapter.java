@@ -113,9 +113,15 @@ public class HelperCardRecyclerAdapter extends RecyclerView.Adapter<HelperCardRe
                             i.putExtra("Help_type","Brain Treatment");
                             break;
                         case 7:
-                            i.putExtra("Help_type","COVID Treatment");
+                            i.putExtra("Help_type","Lungs Treatment");
                             break;
                         case 8:
+                            i.putExtra("Help_type","COVID Treatment");
+                            break;
+                        case 9:
+                            i.putExtra("Help_type","Eye Treatment");
+                            break;
+                        case 10:
                             i.putExtra("Help_type","Request for different kind of Help");
                             break;
                     }

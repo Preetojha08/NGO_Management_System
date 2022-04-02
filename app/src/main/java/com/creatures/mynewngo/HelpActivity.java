@@ -47,27 +47,33 @@ public class HelpActivity extends AppCompatActivity {
         titles.add("Heart Issue");//4
         titles.add("Kidney Treatment");//5
         titles.add("Brain Surgery");//6
-        titles.add("COVID Treatment");//7
-        titles.add("Different Kind of Help");//8Request for Different Kind of Issue
+        titles.add("Lungs Treatment");//7
+        titles.add("COVID Treatment");//8
+        titles.add("Eye Treatment");//9
+        titles.add("Other Helps");//8 Request for Different Kind of Issue
 
-        sub_titles.add("Maximum Fund Raised \n ₹54 Lakhs");
-        sub_titles.add("Maximum Fund Raised \n ₹22 Lakhs");
-        sub_titles.add("Maximum Fund Raised \n ₹29 Lakhs");
-        sub_titles.add("Maximum Fund Raised \n ₹30 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n₹54 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n₹22 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n₹29 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n₹30 Lakhs");
 
-        sub_titles.add("Maximum Fund Raised \n ₹20 Lakhs");
-        sub_titles.add("Maximum Fund Raised \n ₹50 Lakhs");
-        sub_titles.add("Maximum Fund Raised \n ₹28 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n₹20 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n₹20 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n₹50 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n₹28 Lakhs");
+        sub_titles.add("Maximum Fund Raised \n₹78 Lakhs");
         sub_titles.add("Request for Any Type of Issue");//Request for Different Kind of Issue
 
-        images.add(R.drawable.cancer);//1
-        images.add(R.drawable.liver);//2
-        images.add(R.drawable.knee);//
-        images.add(R.drawable.heart);//4
-        images.add(R.drawable.kidney);//5
-        images.add(R.drawable.brain);//6
-        images.add(R.drawable.covid);//7
-        images.add(R.drawable.help_card);//8
+        images.add(R.drawable.help_1);//1
+        images.add(R.drawable.help_2);//2
+        images.add(R.drawable.help_3);//3
+        images.add(R.drawable.help_4);//4
+        images.add(R.drawable.help_5);//5
+        images.add(R.drawable.help_6);//6
+        images.add(R.drawable.help_7);//7
+        images.add(R.drawable.help_8);//8
+        images.add(R.drawable.help_9);//9
+        images.add(R.drawable.help_card);//10
 
         adapter = new HelperCardRecyclerAdapter(this,titles,sub_titles,images,0);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(HelpActivity.this,2,GridLayoutManager.VERTICAL,false);
