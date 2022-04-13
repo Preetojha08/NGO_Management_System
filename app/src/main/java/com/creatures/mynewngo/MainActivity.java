@@ -29,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-
-                Intent i = new Intent(MainActivity.this,HomeActivity.class);
+                //#70f39d green
+                //#37a0f7 blue
+                Intent i = new Intent(MainActivity.this,RegistrationActivity.class);
                 startActivity(i);
                 finish();
             }
