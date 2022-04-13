@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SingleActivityDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_single_food_deatils"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black"
+            app:titleTextAppearance="@style/ToolbarTitleStyle"
+            app:titleTextColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:background="@color/purple_200"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/image_slider_single_food_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    app:auto_cycle="true"
+                    app:delay="0"
+                    app:period="3000"
+                    app:selected_dot="@color/purple_500"
+                    app:unselected_dot="@color/purple_200" />
+
+                <ImageView
+                    android:id="@+id/image_view_single_food_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/textview_heading_singlefooddeatils"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/abril_fatface"
+                    android:forceDarkAllowed="true"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Event Name"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20sdp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/adamina"
+            android:text="Event Deatils"
+            android:textColor="@color/purple_700"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/textview_items_singlefooddeatils"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/adamina"
+            android:padding="@dimen/_4sdp"
+            android:paddingRight="@dimen/_4sdp"
+            android:text="Event ka Description: \n\nHello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world "
+            android:textColor="@color/purple_500"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/textview_counters_singlefooddeatils"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/adamina"
+            android:padding="@dimen/_4sdp"
+            android:paddingRight="@dimen/_4sdp"
+            android:text="Address of Event"
+            android:textColor="@color/purple_500"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/textview_money_singlefooddeatils"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/adamina"
+            android:padding="@dimen/_4sdp"
+            android:paddingRight="@dimen/_4sdp"
+            android:text="Timing of Event"
+            android:textColor="@color/purple_500"
+            android:textSize="@dimen/_12sdp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
